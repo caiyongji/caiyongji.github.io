@@ -62,14 +62,14 @@ duoshuo_share: true                     # set to false if you want to use Commen
 # Baidu Analytics
 ba_track_id: 0dd74616639c8939d89b166c5f335563
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: blog.caiyongji.com
+#ga_track_id: 'UA-xxxxxx-xx'            # Format: UA-xxxxxx-xx
+#ga_domain: blog.caiyongji.com
 
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "alsdkfjlasdfjladjsladjsfsdl;ajdsfjdfl"
+sidebar-about-description: "时间，是框架选取的唯一指标。"
 sidebar-avatar: /img/avatar-cai.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
