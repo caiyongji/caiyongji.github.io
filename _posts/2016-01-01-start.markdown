@@ -1,0 +1,27 @@
+---
+layout:     post
+title:      "Test"
+subtitle:   " \"Hello World, Hello Blog\""
+date:       2015-01-29 12:00:00
+author:     "CaiYongji"
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - Test
+---
+
+> “Yeah It's on. ”
+
+
+## 前言
+
+作为一个程序员
+## 正文
+
+接
+
+
+## 后记
+
+test
+
