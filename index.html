@@ -1,42 +1,340 @@
----
-layout: page
-description: "技术文档只是说明书，罢了。"
----
+<!DOCTYPE html>
+<html>
+<head>
+<title>Caiyongji</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
+/* RESET
+=============================================================================*/
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p>我就从学业、情感、事业三个方面来说吧，毕竟这三个方面相互交织影响着我的整个生涯。采用时间顺序：  </p>
+<hr />
+<p><strong>2006年</strong>，中考以第一的成绩考入省重点高中。  </p>
+<hr />
+<p><strong>2009年</strong>，高考，恰巧跟女朋友分到同一个考场，大多数大题都没有答，把选择题做完就比手势让我的学渣女朋友顺利考上大学。  </p>
+<hr />
+<p><strong>2012年6月</strong>，女朋友劈腿。</p>
+<hr />
+<p><strong>2012年8月</strong>，这时大学和东软集团校企合作，在企业参加实训。期间从学渣直接过度到学霸。  </p>
+<hr />
+<p><strong>2013年2月</strong>，开始在东软集团（沈阳）实习，被东软直接“扣留”到沈阳。</p>
+<hr />
+<p><strong>2013年5月</strong>，注册了一家软件工作室。  </p>
+<hr />
+<p><strong>2013年6月</strong>，从东北石油大学毕业。感觉有被东软裹挟的感觉，不过距离正式入职日期（2013年10月24日）还有几个月，就来大连找工作。收到Roiland的offer，一家欧美的汽车导航公司。感觉这家公司大多数人都是混日子。果断辞职。  </p>
+<hr />
+<p><strong>2013年10月</strong>，入职东软。开始做辽宁移动项目，对日车机导航项目。  </p>
+<hr />
+<p><strong>2014年1月</strong>，跟现在我的老婆谈恋爱。  </p>
+<hr />
+<p><strong>2014年5月</strong>，辞职回老家注册了一家科技公司。启动项目叫饭来张口，外卖项目。那时候饿了么在APP Store只上线了测试版，美团外卖、百度外卖还没有。  </p>
+<hr />
+<p><strong>2014年8月</strong>，女朋友告诉我怀孕了。放弃项目，不能让老婆跟着承担风险，开始考虑结婚。  </p>
+<hr />
+<p><strong>2014年9月</strong>，来到大连，在大连财政局做软件开发。除了公积金是40%以外，整天面对一群“领导”你懂的。很不爽。把外包项目和政府项目拉近自己人生黑名单。  </p>
+<hr />
+<p><strong>2014年10月</strong>，注销科技公司，所有投入资本全搁置。身无分文，从信用卡套现5万，准备结婚。  </p>
+<hr />
+<p><strong>2015年3月</strong>，入职Naver China，一家日韩合资互联网公司，做韩国最大的搜索引擎Naver和亚洲最火的聊天APP叫作line。我的职位介于项目经理和高级软件开发之间，在公司做技术培训、项目管理、技术开发。  </p>
+<hr />
+<p><strong>2015年4月</strong>，我儿子出生，除了照顾孕妇、做饭、上班、之外又多了一项哄孩子，整天忙的“飞起”。  </p>
+<hr />
+<p><strong>2016年4月</strong>，在忙的飞起的基础上又开发了一款微信便利店程序，花了500个小时，投入了这段时间全部积蓄。发现赚钱，但没什么意思。货物出兑，继续上班。  </p>
+<hr />
+<p><strong>2016年6月</strong>，我的直属BOSS辞职回韩国。公司结构变化。不爽。公开简历，从20家公司里选了个开价最高的，工资再翻翻来了Citibank。公司不打卡，整天迟到早退，跟美国开开会，悠闲到无聊。  </p>
+<hr />
+<p><strong>2016年7月</strong>，老婆上班，老妈看孩子。生活稳定安逸。 开始计划下一步生涯。开始加各行各业的大咖、牛人找灵感。开始看书。开始深入学习英文。开始健身。</p>
+<hr />
+<p><strong>2016年11月</strong>，积累脉脉好友1500+，CEO创始人、高管、精英1000左右。包括知乎大V孔庆勋，英语啪啪啪创始人兼网红覃流星Alex，音悦台创始人时颖，<strong>当然也包括个人品牌大师级人物恒洋</strong>。积累知识从保住饭碗的开发技术，到大数据爬虫，到沟通学，到心理学等等。</p>
+<hr />
+<p><strong>2016年12月</strong>，报了个PMP培训班。并且开始扩展自己外国好友圈。  </p>
+<hr />
+<p><strong>现在</strong>，我准备跳出舒适区，来让自己的生活不那么无聊。程序开发的久了，会让自己的思维习惯趋向于程式化。这一点很可怕。当然，技术的职业发展具有非常大的局限性。所以我打算用另外一种生存技能来“混口饭吃”。当然，这是为了保证老婆孩子正常生活下去的同时，稳中求“升”的一种方式。如果跳出体制，依然是机会和风险并存。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
