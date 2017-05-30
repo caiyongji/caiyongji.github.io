@@ -6,6 +6,7 @@
 	content="width=device-width,initial-scale=1,user-scalable=0">
 	<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.0/weui.min.css">
 	<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.1/weui.min.js"></script>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
 </head>
 <style type="text/css">
 .caiyongji span{
@@ -18,7 +19,22 @@
     background-size: auto 56px;
     box-sizing: border-box;
 }
+.takeurhand{
+	background-image: url(images/takeurhand.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-width: 200px;
+    min-height: 200px;
+}
 </style>
+<script type="text/javascript">
+function showDialog(){
+	$("#dialog").css("opacity","1").css("display","block");
+}
+function hideDialog(){
+	$("#dialog").css("opacity","0").css("display","none");
+}
+</script>
 <body>
 <div class="weui-panel weui-panel_access">
             <div class="weui-panel__hd">Projects</div>
@@ -54,7 +70,7 @@
             <div class="weui-panel__ft">
                 <div class="weui-cell weui-cell_access weui-cell_link">
                     <div class="weui-cell__bd caiyongji">
-                    	<a href="http://www.baidu.com" target="blank_"><span style="background-position: -252px -28px;"></span></a>
+                    	<a href="javascript:showDialog();" target="blank_"><span style="background-position: -252px -28px;"></span></a>
                     	<a href="http://weibo.com/takeurhand" target="blank_"><span style="background-position: -56px -28px;"></span></a>
                     	<a href="https://github.com/caiyongji" target="blank_"><span style="background-position: -28px -28px;"></span></a>
                     	<a href="https://www.linkedin.com/in/yongji-cai-379152110/" target="blank_"><span style="background-position: -336px -28px;"></span></a>
@@ -65,4 +81,14 @@
             </div>
         </div>
 </body>
+<div class="js_dialog" id="dialog" style="opacity: 0;display: none;">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__bd takeurhand"></div>
+        <div class="weui-dialog__ft">
+        	<div class="weui-dialog__btn weui-dialog__btn_primary">takeurhand</div>
+            <a href="javascript:hideDialog();" class="weui-dialog__btn weui-dialog__btn_primary">知道了</a>
+        </div>
+    </div>
+</div>
 </html>
