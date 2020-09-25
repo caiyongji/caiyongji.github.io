@@ -1,148 +1,582 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>caiyongji</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="description" content="caiyongji,蔡永吉">
-	<meta name="keywords" content="caiyongji,蔡永吉">
-	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-	<link rel="stylesheet" href="css/weui.1.1.3.min.css">
-	<script type="text/javascript" src="js/weui.1.1.3.min.js"></script>
-	<script type="text/javascript" src="js/zepto.min.js"></script>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-	  (adsbygoogle = window.adsbygoogle || []).push({
-	    google_ad_client: "ca-pub-7481009039568523",
-	    enable_page_level_ads: true
-	  });
-	</script>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-101230919-1', 'auto');
-	  ga('send', 'pageview');
-
-	</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>caiyongji</title>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+            crossorigin="anonymous"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Fonts CSS-->
+    <link rel="stylesheet" href="css/heading.css">
+    <link rel="stylesheet" href="css/body.css">
 </head>
-<style type="text/css">
-.caiyongji span{
-	float: left;
-	background-image: url(images/contacts.svg);
-    background-repeat: no-repeat;
-    width: 28px;
-    height: 28px;
-    vertical-align: middle;
-    background-size: auto 56px;
-    box-sizing: border-box;
-}
-.takeurhand{
-	background-image: url(images/takeurhand.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    min-width: 200px;
-    min-height: 200px;
-}
-.mailcai{
-	font-size: x-large;
-    font-family: -webkit-body;
-    color: #888;
-}
-</style>
-<script type="text/javascript">
-function showDialog(){
-	$("#dialog").css("opacity","1").css("display","block");
-}
-function hideDialog(){
-	$("#dialog").css("opacity","0").css("display","none");
-}
-function showMailDialog(){
-	$("#mailDialog").css("opacity","1").css("display","block");
-}
-function hideMailDialog(){
-	$("#mailDialog").css("opacity","0").css("display","none");
-}
-</script>
-<body>
-<div class="weui-panel weui-panel_access">
-            <div class="weui-panel__hd">Projects</div>
-            <div class="weui-panel__bd">
-				<a href="https://play.google.com/store/apps/details?id=com.caiyongji.flashlight.quickflashlight" target="blank_" class="weui-media-box weui-media-box_appmsg">
-                    <div class="weui-media-box__hd">
-                        <img class="weui-media-box__thumb" src="images/quickflashlight.png" alt="">
+<body id="page-top">
+<nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">CAIYONGJI</a>
+        <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button"
+                data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                                                     href="#portfolio">APPS</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                                                     href="#aiml">AI/ML</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                                                     href="#article">ARTICLES</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                                                     href="#about">ABOUT</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                                                     href="#contact">CONTACT</a>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/caiyongji-logo.png" alt="">
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading mb-0">caiyongji: Not only a developer!</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="pre-wrap masthead-subheading font-weight-light mb-0">Let's make progress!</p>
+    </div>
+</header>
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading text-secondary mb-0 d-inline-block">PERSONAL APPS</h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+            <!-- Portfolio Items-->
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><i
+                                class="fas fa-plus fa-3x"></i></div>
                     </div>
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title">Quick Flashlight</h4>
-                        <p class="weui-media-box__desc">Very quick and ad-free and none permissions required. Just tap the icon directly open the flashlight.</p>
+                    <img class="img-fluid" src="assets/img/portfolio/quit-smoking.png"
+                         alt="Quit Smoking with Cai(Flutter)"/>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Quit Smoking with Cai(Flutter)</div>
+                        <div class="portfolio-caption-subheading text-muted">An app helps people to quit smoking</div>
                     </div>
-                </a>
-               <a href="#" class="weui-media-box weui-media-box_appmsg">
-                    <div class="weui-media-box__hd">
-                        <img class="weui-media-box__thumb" src="images/rptpub.png" alt="">
-                    </div>
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title"><s>rptpub.com</s></h4>
-                        <p class="weui-media-box__desc">rptpub.com: search engine for data report.</p>
-                    </div>
-                </a>
-                <a href="https://github.com/caiyongji/cornershop" target="blank_" class="weui-media-box weui-media-box_appmsg">
-                    <div class="weui-media-box__hd">
-                        <img class="weui-media-box__thumb" src="images/cornershop.jpg" alt="">
-                    </div>
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title">cornershop</h4>
-                        <p class="weui-media-box__desc">Cornershop for wechat: combined with wechat pay, weui.</p>
-                    </div>
-                </a>
-                <a href="https://chrome.google.com/webstore/detail/cookie-injector/mflfghebbbnmdnkhbnmhajalhbgalklk?utm_source=chrome-app-launcher-info-dialog" target="blank_" class="weui-media-box weui-media-box_appmsg">
-                    <div class="weui-media-box__hd">
-                        <img class="weui-media-box__thumb" src="images/cookieInjector.jpg" alt="">
-                    </div>
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title">cookieInjector</h4>
-                        <p class="weui-media-box__desc">cookieInjector for chrome extension: hack tools for cookies.</p>
-                    </div>
-                </a>
+                </div>
             </div>
-            <div class="weui-panel__ft">
-                <div class="weui-cell weui-cell_access weui-cell_link">
-                    <div class="weui-cell__bd caiyongji">
-                    	<a href="javascript:showDialog();"><span style="background-position: -252px -28px;"></span></a>
-                    	<a href="http://weibo.com/takeurhand" target="blank_"><span style="background-position: -56px -28px;"></span></a>
-                    	<a href="https://github.com/caiyongji" target="blank_"><span style="background-position: -28px -28px;"></span></a>
-                    	<a href="https://www.linkedin.com/in/yongji-cai-379152110/" target="blank_"><span style="background-position: -336px -28px;"></span></a>
-                    	<a href="https://www.facebook.com/caiyongji" target="blank_"><span style="background-position: -140px -28px;"></span></a>
-                    	<a href="javascript:showMailDialog();"><span style="background-position: -282px -28px;"></span></a>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><i
+                                class="fas fa-plus fa-3x"></i></div>
                     </div>
-                </div>    
+                    <img class="img-fluid" src="assets/img/portfolio/quick-flashlight.png"
+                         alt="Quick Flashlight(Android)"/>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Quick Flashlight(Android)</div>
+                        <div class="portfolio-caption-subheading text-muted">Very simple Flashlight app</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><i
+                                class="fas fa-plus fa-3x"></i></div>
+                    </div>
+                    <img class="img-fluid" src="assets/img/portfolio/cornershop.png"
+                         alt="Cornershop - Wechat Shopping Program(full solution)"/>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Cornershop - Wechat Shopping Program(full solution)</div>
+                        <div class="portfolio-caption-subheading text-muted">Full stack solution for shopping</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><i
+                                class="fas fa-plus fa-3x"></i></div>
+                    </div>
+                    <img class="img-fluid" src="assets/img/portfolio/cookie-injector.png"
+                         alt="Cookie Injector(Chrome Extension)"/>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Cookie Injector(Chrome Extension)</div>
+                        <div class="portfolio-caption-subheading text-muted">cookie hacker tools to inject cookies</div>
+                    </div>
+                </div>
             </div>
         </div>
-		<div class="weui-footer weui-footer_fixed-bottom">
-			<img src="images/gzh-qrcode.jpg" alt="">
-			<p class="weui-footer__links">
-				<a href="javascript:void(0);" class="weui-footer__link">公众号：caiyongji</a>
-			</p>
-			<p class="weui-footer__text">Copyright &copy; 2015-2018 caiyongji.com</p>
-		</div>
+    </div>
+</section>
+<section class="page-section bg-primary portfolio text-white" id="aiml">
+    <div class="container">
+        <!-- About Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading d-inline-block text-white">AI/ML</h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-6 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+                    <iframe src="https://www.youtube.com/embed/wy2myqiDODY" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading text-white">Machine Learning CNN Presentation(part 1/2)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+                    <iframe src="https://www.youtube.com/embed/rAVfCG2QrTc" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading text-white">TFUG-Dalian: TF 2.x Best Bet - Deep
+                            Reinforcement
+                            Learning using TF-Agents
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto">
+                    <a target="_blank" href="https://mp.weixin.qq.com/s/XpvfGSTPjyFzKfgSbMsJGw">
+                        <img class="img-fluid" src="assets/img/tfug1.jpg"/>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">「活动回顾 」TensorFlow Meetup 大连第一次活动回顾</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto">
+                    <a target="_blank" href="https://mp.weixin.qq.com/s/wzRgmwJcf34GubTKlFPNsg">
+                        <img class="img-fluid" src="assets/img/tfug2.jpg"/>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">「活动回顾 」TensorFlow World Extended 大连第二次活动回顾</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto">
+                    <a target="_blank" href="https://mp.weixin.qq.com/s/nq2CpvqBstgVQfNo2gDYZQ">
+                        <img class="img-fluid" src="assets/img/tfug2-2.jpg"/>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">[活动回顾]TF 2.x Best Bet（大连&成都）</div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-left col-md-12 col-lg-12 mb-5">
+                <ul>
+                    <li><a class="portfolio-caption-heading text-white" target="_blank"
+                           href="https://juejin.im/post/6844903813971705869">机器学习导图系列（1）：数据处理</a>
+                    </li>
+                    <li><a class="portfolio-caption-heading text-white" target="_blank"
+                           href="https://juejin.im/post/6844903814839943175">机器学习导图系列（2）：概念</a>
+                    </li>
+                    <li><a class="portfolio-caption-heading text-white" target="_blank"
+                           href="https://juejin.im/post/6844903815573946375">机器学习导图系列（3）：过程</a>
+                    </li>
+                    <li><a class="portfolio-caption-heading text-white" target="_blank"
+                           href="https://juejin.im/post/6844903816270184455">机器学习导图系列（4）：算法(含61公式)</a>
+                    </li>
+                    <li><a class="portfolio-caption-heading text-white" target="_blank"
+                           href="https://juejin.im/post/6844903817016770574">机器学习导图系列（5）：机器学习模型及神经网络模型</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-section mb-0" id="article">
+    <div class="container">
+        <!-- About Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading d-inline-block ">ARTICLES</h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="text-left col-md-12 col-lg-12 mb-5">
+            <ul>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://juejin.im/post/6844903538116526087">如何成为10倍速的程序员</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://juejin.im/post/6844903540737966094">在编程中为所欲为[圣诞版]</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://juejin.im/post/6844903544571559949">多域名解析及延伸知识点</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://juejin.im/post/6844903544949047309">冲顶大会APP技术选型及架构设计</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://juejin.im/post/6844903550229676045">AI时代：推荐引擎正在塑造人类</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://juejin.im/post/6844903555355115533">全栈技术导图</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://juejin.im/post/6844903557653594125">微信红包的随机算法是怎样实现的？</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://juejin.im/post/6844903603564445710">实例：使用puppeteer headless方式抓取JS网页</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://juejin.im/entry/6844903653136924680">百度，你拿什么和谷歌争？</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://mp.weixin.qq.com/s/1nfkQDV5Y3s6r_gUy3MGtQ">那些10w+的公众号都在写什么？</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://juejin.im/post/6844903744417562637">驳 《驳 《驳 《停止学习框架》》》</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://zhuanlan.zhihu.com/p/131695222">天下苦谷歌网盘久矣！</a>
+                </li>
+                <li><a class="caption-heading" target="_blank"
+                       href="https://mp.weixin.qq.com/s/cZ_yUieSCaWnW2lXil-Ggg">你的知识死角不能否定你的技术能力</a>
+                </li>
+               <li><a class="caption-heading" target="_blank"
+                      href="https://mp.weixin.qq.com/s/xDbqRycbeJj1wRudJjPElg">摩拜单车和ofo单车数据分析报告</a>
+               </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="container">
+        <!-- About Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading d-inline-block text-white">ABOUT</h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row">
+            <div class="col-lg-4 m-auto">
+                <p class="lead ">
+                    CURRENT POSTION: <br>
+                    CITI Apps Dev Programmer Analyst 2 <br>
+                    TFUG Dalian organizer<br>
+                    Certified author on technical platforms
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-section" id="contact">
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading text-secondary d-inline-block mb-0">CONTACT</h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Contact Section Content-->
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
+                    <div class="text-muted">Email</div>
+                    <a class="lead font-weight-bold" href="mailto:i@caiyongji.com">i@caiyongji.com</a>
+                </div>
+            </div>
+           <div class="col-lg-4">
+              <div class="d-flex flex-column align-items-center">
+                 <div class="icon-contact mb-3"><i class="fab fa-fw fa-weixin"></i></div>
+                 <div class="text-muted">Wechat</div>
+                 <a class="lead font-weight-bold" data-toggle="modal" data-target="#wechatModal" href="">takeurhand</a>
+              </div>
+           </div>
+           <div class="col-lg-4">
+              <div class="d-flex flex-column align-items-center">
+                 <div class="icon-contact mb-3"><i class="fab fa-fw fa-youtube"></i></div>
+                 <div class="text-muted">Youtube</div>
+                 <a class="lead font-weight-bold" href="https://www.youtube.com/channel/UCmbJ69oMwRdBK7rZRcpY8Ew/featured">Yongji Cai</a>
+              </div>
+           </div>
+
+        </div>
+    </div>
+</section>
+<footer class="footer text-center">
+    <div class="container">
+        <div class="row">
+            <!-- Footer Location-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="mb-4"></h4>
+                <p class="pre-wrap lead mb-0"></p>
+            </div>
+            <!-- Footer Social Icons-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="mb-4">Social Media</h4>
+                <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/caiyongji">
+                    <i class="fab fa-fw fa-facebook-f"></i>
+                </a>
+                <a class="btn btn-outline-light btn-social mx-1"
+                   href="https://www.twitter.com/caiyongji">
+                    <i class="fab fa-fw fa-twitter"></i>
+                </a>
+                <a class="btn btn-outline-light btn-social mx-1"
+                   href="https://www.linkedin.com/in/caiyongji">
+                    <i class="fab fa-fw fa-linkedin-in"></i>
+                </a>
+               <a class="btn btn-outline-light btn-social mx-1"
+                  href="https://github.com/caiyongji">
+                  <i class="fab fa-fw fa-github"></i>
+               </a>
+            </div>
+            <!-- Footer About Text-->
+            <div class="col-lg-4">
+                <h4 class="mb-4"></h4>
+                <p class="pre-wrap lead mb-0"></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Portfolio Modal-->
+<div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog"
+     aria-labelledby="#portfolioModal0Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i
+                    class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Quit Smoking with Cai(Flutter)</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
+                                                                src="assets/img/portfolio/quit-smoking.png"
+                                                                alt="Quit Smoking with Cai(Flutter)"/>
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">I succeeded to quit smoking!
+                                The reason why I made this app is that I like to share good things with my friends. It
+                                feels great when I see people get better because of me.
+                                I feel relaxed and healthy, because I'm a non-smoker.
+                                Quit smoking with me, I'm sure YOU CAN MAKE IT!!!
+                                https://play.google.com/store/apps/details?id=com.caiyongji.quit_smoking
+                            </p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i
+                                    class="fas fa-times fa-fw"></i>Close Window
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog"
+     aria-labelledby="#portfolioModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i
+                    class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Quick Flashlight(Android)</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
+                                                                src="assets/img/portfolio/quick-flashlight.png"
+                                                                alt="Quick Flashlight(Android)"/>
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Very simple Flashlight app.
+                                https://play.google.com/store/apps/details?id=com.caiyongji.flashlight.quickflashlight
+                            </p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i
+                                    class="fas fa-times fa-fw"></i>Close Window
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog"
+     aria-labelledby="#portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i
+                    class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Cornershop - Wechat Shopping
+                                Program(full solution)</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
+                                                                src="assets/img/portfolio/cornershop.png"
+                                                                alt="Cornershop - Wechat Shopping Program(full solution)"/>
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">In 2016, there's no shopping program embed in Wechat can satisfy me. So I
+                                made one by myself.</p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i
+                                    class="fas fa-times fa-fw"></i>Close Window
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog"
+     aria-labelledby="#portfolioModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i
+                    class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Cookie Injector(Chrome Extension)</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
+                                                                src="assets/img/portfolio/cookie-injector.png"
+                                                                alt="Cookie Injector(Chrome Extension)"/>
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">cookie hacker tools to inject cookies
+                                https://chrome.google.com/webstore/detail/cookie-injector/mflfghebbbnmdnkhbnmhajalhbgalklk
+                            </p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i
+                                    class="fas fa-times fa-fw"></i>Close Window
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="wechatModal" tabindex="-1" role="dialog"
+     aria-labelledby="#wechatModalLabel" aria-hidden="true">
+   <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+         <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i
+                 class="fas fa-times"></i></span></button>
+         <div class="modal-body text-center">
+            <div class="container">
+               <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                     <!-- Portfolio Modal - Title-->
+                     <h2 class="portfolio-modal-title text-secondary mb-0">caiyongji's wechat</h2>
+                     <!-- Icon Divider-->
+                     <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                     </div>
+                     <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5"
+                                                         src="assets/img/wechat.jpg"
+                                                         alt="wechat"/>
+                     <!-- Portfolio Modal - Text-->
+                     <p class="mb-5">Please note who you are and what you want.
+                     </p>
+                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i
+                             class="fas fa-times fa-fw"></i>Close Window
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Copyright Section-->
+<section class="copyright py-4 text-center text-white">
+    <div class="container"><small class="pre-wrap">Copyright © caiyongji.com 2020 </small></div>
+</section>
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+<div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded"
+                                                       href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Contact form JS-->
+<script src="assets/mail/jqBootstrapValidation.js"></script>
+<script src="assets/mail/contact_me.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
 </body>
-<div class="js_dialog" id="dialog" style="opacity: 0;display: none;">
-    <div class="weui-mask"></div>
-    <div class="weui-dialog">
-        <div class="weui-dialog__bd takeurhand"></div>
-        <div class="weui-dialog__ft">
-        	<div class="weui-dialog__btn weui-dialog__btn_primary">takeurhand</div>
-            <a href="javascript:hideDialog();" class="weui-dialog__btn weui-dialog__btn_primary">Ok</a>
-        </div>
-    </div>
-</div>
-<div class="js_dialog" id="mailDialog" style="opacity: 0;display: none;">
-    <div class="weui-mask"></div>
-    <div class="weui-dialog">
-        <div class="weui-dialog__bd"><a href="mailto:i@caiyongji.com?subject=%5BhiCai%5D&body=Hi%20cai%2C%0A" class="mailcai">i@caiyongji.com</a></div>
-        <div class="weui-dialog__ft">
-            <a href="javascript:hideMailDialog();" class="weui-dialog__btn weui-dialog__btn_primary">Ok</a>
-        </div>
-    </div>
-</div>
 </html>
