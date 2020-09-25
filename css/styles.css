@@ -10221,7 +10221,7 @@ ul {
   padding: 0;
   margin: 0;
 }
-ul li::before {
+.article-ul li::before {
   content: "\2022";
   color: #1abc9c;
   font-weight: bold;
