@@ -3,3 +3,6 @@
 /.idea/misc.xml
 /.idea/modules.xml
 /.idea/vcs.xml
+.DS_Store
+.idea/inspectionProfiles/profiles_settings.xml
+assets/.DS_Store
