@@ -5,8 +5,6 @@ draft: false
 tags: ["Hugo", "博客"]
 categories: ["技术"]
 ---
-
-
 # 欢迎来到我的博客
 
 这是我使用 Hugo 创建的第一篇博客文章。
