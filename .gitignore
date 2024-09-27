@@ -6,7 +6,6 @@
 .DS_Store
 .idea/inspectionProfiles/profiles_settings.xml
 assets/.DS_Store
-
 # 忽略 public 文件夹中的所有内容，但保留文件夹本身
 /public/*
 !/public/.gitkeep
