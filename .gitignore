@@ -6,3 +6,4 @@
 .DS_Store
 .idea/inspectionProfiles/profiles_settings.xml
 assets/.DS_Store
+/public
