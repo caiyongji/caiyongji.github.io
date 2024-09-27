@@ -37,6 +37,6 @@ params:
     type: flexsearch
     flexsearch:
       index: content
-  services:
-    googleAnalytics:
-      ID: G-JZLX4SZLRT
+services:
+  googleAnalytics:
+    ID: G-JZLX4SZLRT
