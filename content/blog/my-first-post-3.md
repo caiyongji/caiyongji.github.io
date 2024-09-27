@@ -1,6 +1,5 @@
 ---
 title: "我的第3333篇博客文章"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
 date: 2023-04-15T14:30:00+08:00
 draft: false
 tags: ["Hugo", "博客"]
