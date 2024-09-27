@@ -1,0 +1,42 @@
+baseURL: 'https://www.caiyongji.com'
+languageCode: 'en-us'
+title: 'CAIYONGJI'
+theme: "hextra"
+
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 10
+    - name: Blog
+      url: /blog/
+      weight: 20
+    - name: About
+      url: /about/
+      weight: 30
+    - name: Search
+      weight: 1
+      params:
+        type: search
+
+params:
+  theme:
+    default: system
+    displayToggle: true
+  navbar:
+    logo:
+      path: "images/logo.png"  # 相对于assets文件夹的路径
+      dark: "images/logo-dark.png"  # 暗色模式下的logo（如果有的话）
+      link: "/"  # logo点击后跳转的链接（通常是首页）
+      width: 30  # logo的宽度（单位：像素）
+      height: 30  # logo的高度（单位：像素）
+  
+  # 添加以下内容以启用搜索功能
+  search:
+    enable: true
+    type: flexsearch
+    flexsearch:
+      index: content
+  services:
+    googleAnalytics:
+      ID: G-JZLX4SZLRT
