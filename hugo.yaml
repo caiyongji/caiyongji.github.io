@@ -1,7 +1,7 @@
 baseURL: 'https://www.caiyongji.com'
 languageCode: 'en-us'
 title: 'CAIYONGJI'
-theme: "hextra"
+theme: "hextracai"
 
 menu:
   main:

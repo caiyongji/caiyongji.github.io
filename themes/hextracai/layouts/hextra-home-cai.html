@@ -1,0 +1,46 @@
+{{ define "main" }}
+  <div class='hx-mx-auto hx-flex {{ partial "utils/page-width" . }}'>
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
+    <div class="hx-w-full hx-break-words hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-pb-8 hx-pt-8 md:hx-pt-12 hx-pl-[max(env(safe-area-inset-left),1.5rem)] hx-pr-[max(env(safe-area-inset-left),1.5rem)]">
+      <div class="hx-flex hx-flex-col hx-items-start">
+        <div class="hx-mt-6 hx-mb-6">
+          <h1 class="not-prose hx-text-4xl hx-font-bold hx-leading-none hx-tracking-tighter md:hx-text-5xl hx-py-2 hx-bg-clip-text hx-text-transparent hx-bg-gradient-to-r hx-from-gray-900 hx-to-gray-600 dark:hx-from-gray-100 dark:hx-to-gray-400">
+            Hi there! I'm Cai.
+          </h1>
+        </div>
+
+        <div class="hx-mb-12">
+          <p class="not-prose hx-text-xl hx-text-gray-600 dark:hx-text-gray-400 sm:hx-text-xl">
+            I'm an indie developer exploring AI-powered entrepreneurship.<br class="sm:hx-block hx-hidden" /> In today's AI age, I believe everyone can build their own startup. <br class="sm:hx-block hx-hidden" /> I'm taking a <strong>Build in Public</strong> approach, focusing on  <em>AI tools,<br class="sm:hx-block hx-hidden" /> boosting productivity, personal growth, and entrepreneurship.</em>
+          </p>
+        </div>
+
+        <div class="hx-mb-6">
+          <a href="/blog" class="hx-inline-flex hx-items-center hx-justify-center hx-gap-2 hx-rounded-lg hx-bg-primary-600 hx-px-4 hx-py-2 hx-text-sm hx-font-semibold hx-text-white hx-transition hx-duration-300 hover:hx-bg-primary-700 hx-shadow-sm">
+            Explore My Blog
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="hx-h-4 hx-w-4 hx-transform hx-rotate-0">
+              <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- 新添加的社交媒体账号区域 -->
+        <div class="hx-mt-12 hx-w-full">
+          <h2 class="hx-text-2xl hx-font-bold hx-mb-4">Find me on:</h2>
+          <div class="hx-flex hx-flex-wrap hx-gap-4">
+            <a href="https://twitter.com/caiyongji" class="hx-text-gray-600 hover:hx-text-primary-600 dark:hx-text-gray-400 dark:hover:hx-text-primary-500">
+              <i class="fab fa-twitter hx-w-8 hx-h-8 hover:hx-scale-110 transition-transform duration-200"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/caiyongji/" class="hx-text-gray-600 hover:hx-text-primary-600 dark:hx-text-gray-400 dark:hover:hx-text-primary-500">
+              <i class="fab fa-linkedin hx-w-8 hx-h-8 hover:hx-scale-110 transition-transform duration-200"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 在页面最后引入 Font Awesome 样式表 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+{{ end }}
