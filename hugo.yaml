@@ -42,3 +42,8 @@ params:
 services:
   googleAnalytics:
     ID: G-JZLX4SZLRT
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
