@@ -29,8 +29,8 @@ export default function RootLayout({
           <Navigation />
           <main className="bg-white dark:bg-[rgb(20,20,20)] min-h-screen">
             {children}
-            <Footer />
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
