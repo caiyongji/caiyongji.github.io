@@ -9,7 +9,7 @@ type ProjectCardProps = {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, link }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+    <div className=" shadow-md rounded-lg overflow-hidden">
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{name}</h3>
         <p className="text-gray-600 mb-4">{description}</p>

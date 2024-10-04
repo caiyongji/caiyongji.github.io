@@ -1,5 +1,7 @@
 import DynamicTitle from './components/DynamicTitle';
 import ProjectShowcase from './components/ProjectShowcase';
+import Roadmap from './components/Roadmap';
+import Timeline from './components/Timeline';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,6 +13,8 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-start">
       <DynamicTitle />
       <ProjectShowcase />
+      <Roadmap />
+      <Timeline />
       {/* Other components */}
     </main>
   );

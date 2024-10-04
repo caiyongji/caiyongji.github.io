@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Existing configurations...
+  // ... other configurations
   webpack: (config) => {
     config.module.rules.push({
       test: /\.json$/,
