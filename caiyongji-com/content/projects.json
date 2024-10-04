@@ -1,0 +1,17 @@
+[
+  {
+    "name": "AI Productivity App",
+    "description": "An app to enhance productivity using AI.",
+    "link": "/projects/ai-productivity-app"
+  },
+  {
+    "name": "Startup Toolkit",
+    "description": "Tools and resources for new entrepreneurs.",
+    "link": "/projects/startup-toolkit"
+  },
+  {
+    "name": "Personal AI Assistant",
+    "description": "A customizable AI assistant for daily tasks.",
+    "link": "/projects/personal-ai-assistant"
+  }
+]
