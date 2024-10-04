@@ -46,3 +46,11 @@ body {
 main {
   flex: 1;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.social-icon {
+  transition: color 0.3s ease;
+}

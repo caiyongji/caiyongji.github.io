@@ -10,12 +10,16 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start">
-      <DynamicTitle />
-      <ProjectShowcase />
-      <Roadmap />
-      <Timeline />
-      {/* Other components */}
+    <main className="flex flex-col items-center justify-start">
+      <section className="h-screen w-full flex items-center justify-center">
+        <DynamicTitle />
+      </section>
+      <section className="w-full">
+        <ProjectShowcase />
+        <Roadmap />
+        <Timeline />
+        {/* Other components */}
+      </section>
     </main>
   );
 }
