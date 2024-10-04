@@ -4,7 +4,12 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-const keywords = ['AI', 'Self Improvement','Startup','Personal Growth']
+const keywords = [
+  { text: 'AI', color: '#007bff' },
+  { text: 'Self Improvement', color: '#28a745' },
+  { text: 'Startup', color: '#fd7e14' },
+  { text: 'Personal Growth', color: '#ffc107' }
+]
 
 export default function FullPageDynamicTitle() {
   const [currentKeywordIndex, setCurrentKeywordIndex] = useState(0)
@@ -12,7 +17,7 @@ export default function FullPageDynamicTitle() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentKeywordIndex((prevIndex) => (prevIndex + 1) % keywords.length)
-    }, 3000)
+    }, 2000)
 
     return () => clearInterval(interval)
   }, [])
@@ -21,21 +26,22 @@ export default function FullPageDynamicTitle() {
     <div className="bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-4 w-full">
       <div className="max-w-6xl w-full mx-auto flex flex-col lg:flex-row items-center justify-between">
         <div className="lg:flex-1 mb-8 lg:mb-0 lg:pr-8">
-          <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-gray-800">Hi there! I'm Cai.</h1>
-          <p className="text-xl lg:text-2xl mb-6 text-gray-600">I'm an indie developer exploring AI-powered entrepreneurship.</p>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-gray-800">Hi there! I&apos;m Cai.</h1>
+          <p className="text-xl lg:text-2xl mb-6 text-gray-600">I&apos;m an indie developer exploring AI-powered entrepreneurship.</p>
           <div className="text-lg lg:text-xl flex flex-col sm:flex-row items-start sm:items-center text-gray-700">
-            <span className="mr-2 mb-2 sm:mb-0">I'm taking a <strong>Build in Public</strong> approach, focusing on</span>
+            <span className="mr-2 mb-2 sm:mb-0">I&apos;m taking a <strong>Build in Public</strong> approach, focusing on</span>
             <div className="h-[40px] overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.span
-                  key={keywords[currentKeywordIndex]}
+                  key={keywords[currentKeywordIndex].text}
                   initial={{ y: 40 }}
                   animate={{ y: 0 }}
                   exit={{ y: -40 }}
                   transition={{ duration: 0.3 }}
-                  className="inline-block text-blue-500 font-semibold text-2xl lg:text-3xl"
+                  className="inline-block font-semibold text-2xl lg:text-3xl whitespace-nowrap"
+                  style={{ color: keywords[currentKeywordIndex].color }}
                 >
-                  {keywords[currentKeywordIndex]}
+                  {keywords[currentKeywordIndex].text}
                 </motion.span>
               </AnimatePresence>
             </div>
