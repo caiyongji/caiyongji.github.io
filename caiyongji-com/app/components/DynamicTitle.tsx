@@ -29,7 +29,7 @@ const DynamicTitle: React.FC = () => {
       <div className="max-w-6xl w-full mx-auto flex flex-col lg:flex-row items-center justify-between">
         <div className="lg:flex-1 mb-8 lg:mb-0 lg:pr-8 flex flex-col justify-between h-full">
           <div>
-            <h1 className="text-5xl lg:text-6xl font-bold mb-4">Hi there! I&apos;m Cai.</h1>
+            <h1 className="text-5xl lg:text-6xl font-bold mb-4">Hi, I&apos;m Cai</h1>
             <p className="text-xl lg:text-2xl mb-6">I&apos;m an indie developer exploring AI-powered entrepreneurship.</p>
             <div className="text-lg lg:text-xl flex flex-col sm:flex-row items-start sm:items-center mb-6">
               <span className="mr-2 mb-2 sm:mb-0">I&apos;m taking a <strong>Build in Public</strong> approach, focusing on</span>
