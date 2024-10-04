@@ -15,7 +15,6 @@ const keywords = [
 
 const DynamicTitle: React.FC = () => {
   const [currentKeywordIndex, setCurrentKeywordIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,20 +23,6 @@ const DynamicTitle: React.FC = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-  const socialLinks = [
-    { href: "https://twitter.com/caiyongji", icon: <XIcon />, name: "X (Twitter)", hoverColor: "#1DA1F2" },
-    { href: "https://www.linkedin.com/in/caiyongji/", icon: <LinkedInIcon />, name: "LinkedIn", hoverColor: "#0A66C2" },
-    { href: "https://medium.com/@caiyongji", icon: <MediumIcon />, name: "Medium", hoverColor: "#00AB6C" },
-    { href: "https://www.youtube.com/@caiyongji", icon: <YouTubeIcon />, name: "YouTube", hoverColor: "#FF0000" },
-  ];
-
-  const handleHover = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setTimeout(() => setIsAnimating(false), socialLinks.length * 300); // 动画总时长
-    }
-  };
 
   return (
     <div className="w-full h-full flex items-center justify-center">
@@ -69,15 +54,10 @@ const DynamicTitle: React.FC = () => {
           <div className="mt-auto pt-16">
             <p className="text-lg mb-2">Find me on:</p>
             <div className="flex space-x-4">
-              {socialLinks.map((link, index) => (
-                <SocialLink
-                  key={link.name}
-                  {...link}
-                  isAnimating={isAnimating}
-                  animationDelay={index * 100}
-                  onHover={handleHover}
-                />
-              ))}
+              <SocialLink href="https://twitter.com/caiyongji" icon={<XIcon />} name="X (Twitter)" hoverColor="#1DA1F2" />
+              <SocialLink href="https://www.linkedin.com/in/caiyongji/" icon={<LinkedInIcon />} name="LinkedIn" hoverColor="#0A66C2" />
+              <SocialLink href="https://medium.com/@caiyongji" icon={<MediumIcon />} name="Medium" hoverColor="#00AB6C" />
+              <SocialLink href="https://www.youtube.com/@caiyongji" icon={<YouTubeIcon />} name="YouTube" hoverColor="#FF0000" />
             </div>
           </div>
         </div>
@@ -100,12 +80,9 @@ interface SocialLinkProps {
   icon: React.ReactNode;
   name: string;
   hoverColor: string;
-  isAnimating: boolean;
-  animationDelay: number;
-  onHover: () => void;
 }
 
-const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, name, hoverColor, isAnimating, animationDelay, onHover }) => {
+const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, name, hoverColor }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -115,24 +92,12 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, name, hoverColor, i
         target="_blank" 
         rel="noopener noreferrer" 
         className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
-        onMouseEnter={() => {
-          setIsHovered(true);
-          onHover();
-        }}
+        onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <motion.div
-          className="social-icon"
-          animate={{
-            color: (isHovered || isAnimating) ? hoverColor : 'currentColor'
-          }}
-          transition={{
-            duration: 0.3,
-            delay: isAnimating ? animationDelay / 1000 : 0
-          }}
-        >
+        <div className="social-icon" style={{ color: isHovered ? hoverColor : 'currentColor' }}>
           {icon}
-        </motion.div>
+        </div>
       </Link>
       <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
         {name}
