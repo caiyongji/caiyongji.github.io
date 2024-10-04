@@ -25,13 +25,13 @@ const DynamicTitle: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <div className="max-w-6xl w-full mx-auto flex flex-col lg:flex-row items-center justify-between">
-        <div className="lg:flex-1 mb-8 lg:mb-0 lg:pr-8 flex flex-col justify-between h-full">
-          <div>
-            <h1 className="text-5xl lg:text-6xl font-bold mb-4">Hi, I&apos;m Cai</h1>
-            <p className="text-xl lg:text-2xl mb-6">I&apos;m an indie developer exploring AI-powered entrepreneurship.</p>
-            <div className="text-lg lg:text-xl flex flex-col sm:flex-row items-start sm:items-center mb-6">
+    <div className="w-full min-h-[calc(100vh-4rem)] flex items-center justify-center py-4 sm:py-8">
+      <div className="max-w-6xl w-full mx-auto flex flex-col lg:flex-row items-center justify-between px-4">
+        <div className="lg:flex-1 mb-8 lg:mb-0 lg:pr-8 flex flex-col justify-between">
+          <div className="mt-4 sm:mt-0"> {/* 添加这个包装 div */}
+            <h1 className="text-4xl lg:text-6xl font-bold mb-4">Hi, I&apos;m Cai</h1>
+            <p className="text-lg lg:text-2xl mb-6">I&apos;m an indie developer exploring AI-powered entrepreneurship.</p>
+            <div className="text-base lg:text-xl flex flex-col sm:flex-row items-start sm:items-center mb-6">
               <span className="mr-2 mb-2 sm:mb-0">I&apos;m taking a <strong>Build in Public</strong> approach, focusing on</span>
               <div className="h-[40px] overflow-hidden">
                 <AnimatePresence mode="wait">
@@ -41,7 +41,7 @@ const DynamicTitle: React.FC = () => {
                     animate={{ y: 0 }}
                     exit={{ y: -40 }}
                     transition={{ duration: 0.3 }}
-                    className="inline-block font-semibold text-2xl lg:text-3xl whitespace-nowrap"
+                    className="inline-block font-semibold text-xl lg:text-3xl whitespace-nowrap"
                     style={{ color: keywords[currentKeywordIndex].color }}
                   >
                     {keywords[currentKeywordIndex].text}
@@ -50,8 +50,8 @@ const DynamicTitle: React.FC = () => {
               </div>
             </div>
           </div>
-          {/* 社交媒体链接部分 - 增加了上边距 */}
-          <div className="mt-auto pt-16">
+          {/* 社交媒体链接部分保持不变 */}
+          <div className="mt-auto pt-4 sm:pt-8 lg:pt-16">
             <p className="text-lg mb-2">Find me on:</p>
             <div className="flex space-x-4">
               <SocialLink href="https://twitter.com/caiyongji" icon={<XIcon />} name="X (Twitter)" hoverColor="#1DA1F2" />
@@ -62,7 +62,7 @@ const DynamicTitle: React.FC = () => {
           </div>
         </div>
         <div className="lg:flex-shrink-0">
-          <Avatar className="w-40 h-40 lg:w-64 lg:h-64">
+          <Avatar className="w-32 h-32 sm:w-40 sm:h-40 lg:w-64 lg:h-64">
             <AvatarImage src="/avatars/avatar.png" alt="Cai" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>

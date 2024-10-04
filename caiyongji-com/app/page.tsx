@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-start">
-      <section className="h-screen w-full flex items-center justify-center">
+      <section className="w-full">
         <DynamicTitle />
       </section>
       <section className="w-full">

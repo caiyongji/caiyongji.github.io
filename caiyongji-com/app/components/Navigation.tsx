@@ -40,9 +40,9 @@ const Navigation = () => {
           </button>
         </div>
         <ul className={`md:flex md:space-x-4 md:items-center ${isMenuOpen ? 'flex' : 'hidden'} flex-col md:flex-row absolute md:static top-16 right-0 bg-white dark:bg-[rgb(20,20,20)] md:bg-transparent p-4 md:p-0 shadow-lg md:shadow-none`}>
-          <li className="w-full md:w-auto"><Link href="/" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300 text-right md:text-left">Home</Link></li>
-          <li className="w-full md:w-auto"><Link href="/blog" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300 text-right md:text-left">Blog</Link></li>
-          <li className="w-full md:w-auto"><Link href="/about" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300 text-right md:text-left">About</Link></li>
+          <li className="w-full md:w-auto"><Link href="/" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300 text-left">Home</Link></li>
+          <li className="w-full md:w-auto"><Link href="/blog" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300 text-left">Blog</Link></li>
+          <li className="w-full md:w-auto"><Link href="/about" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300 text-left">About</Link></li>
           <li className="w-full md:w-auto flex justify-end md:justify-start">
             <button
               onClick={toggleTheme}
