@@ -6,6 +6,13 @@
 该功能涉及网站底部（Footer）的设计和实现，主要包含两个部分：
 1. **社交媒体按钮**：展示社交媒体平台（Twitter、LinkedIn、Medium、YouTube）的图标按钮，链接到相关平台页面。
 2. **版权声明**：展示版权声明，确保网站的法律合规性。
+https://twitter.com/caiyongji
+https://www.linkedin.com/in/caiyongji/
+https://medium.com/@caiyongji
+https://www.youtube.com/@caiyongji
+
+
+YourCompanyName: CAIYONGJI
 
 #### **功能要求**
 

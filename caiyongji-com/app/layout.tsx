@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from "@/components/theme-provider"
 import Navigation from './components/Navigation'
+import Footer from './components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Navigation />
           <main className="bg-white dark:bg-[rgb(20,20,20)] min-h-screen">
             {children}
+            <Footer />
           </main>
         </ThemeProvider>
       </body>

@@ -30,3 +30,19 @@ body {
   color: #fff;
   background: #000;
 }
+
+/* 在文件末尾添加以下样式 */
+
+footer {
+  margin-top: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
