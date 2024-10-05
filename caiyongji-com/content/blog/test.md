@@ -2,6 +2,7 @@
 title: "test"
 date: "2024-10-05 21:1"
 description: "cai yongji test test  cacacacacacacaca"
+tags: ["Next.js", "React", "Web Development"]
 ---
 
 # How to Use AI Tools to Boost Your Productivity
