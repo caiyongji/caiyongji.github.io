@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getBlogPosts, BlogPost } from '../../../lib/getBlogPosts';
 
-const POSTS_PER_PAGE = 5;
+const POSTS_PER_PAGE = 8;
 const MAX_VISIBLE_PAGES = 5;
 
 export default function BlogPage({ params }: { params: { page: string } }) {
@@ -14,7 +14,6 @@ export default function BlogPage({ params }: { params: { page: string } }) {
     currentPage * POSTS_PER_PAGE
   );
 
-  // 生成显示的页码数组
   const getPageNumbers = () => {
     const pageNumbers = [];
     if (totalPages <= MAX_VISIBLE_PAGES) {
@@ -40,48 +39,59 @@ export default function BlogPage({ params }: { params: { page: string } }) {
   const pageNumbers = getPageNumbers();
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Blog Posts</h1>
-      <ul className="space-y-4">
+    <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <h1 className="text-4xl font-bold mb-12 text-center text-gray-800">Blog Posts</h1>
+      <ul className="space-y-8">
         {paginatedPosts.map((post: BlogPost) => (
-          <li key={post.slug} className=" pb-4">
-            <Link href={`/blog/${post.slug}`} className="text-2xl font-semibold hover:text-blue-600">
-              {post.title}
+          <li key={post.slug} className="border-b border-gray-200 pb-6 last:border-b-0">
+            <Link href={`/blog/${post.slug}`} className="group">
+              <h2 className="text-2xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-200">
+                {post.title}
+              </h2>
+              <p className="text-gray-600 mt-2 line-clamp-2">{post.description}</p>
+              <p className="text-sm text-gray-400 mt-2">{post.date}</p>
             </Link>
-            <p className="text-gray-400 mt-2">{post.description}</p>
-            <p className="text-sm text-gray-500 mt-1">{post.date}</p>
           </li>
         ))}
       </ul>
-      <div className="mt-8 flex justify-left space-x-2">
-        {currentPage > 1 && (
-          <Link href={`/blog/page/${currentPage - 1}`} className="px-3 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors">
-            &lt;
-          </Link>
-        )}
-        {pageNumbers.map((number, index) => (
-          number === '...' ? (
-            <span key={index} className="px-3 py-2 text-gray-500">...</span>
-          ) : (
-            <Link
-              key={index}
-              href={`/blog/page/${number}`}
-              className={`px-3 py-2 rounded transition-colors ${
-                currentPage === number
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              {number}
-            </Link>
-          )
-        ))}
-        {currentPage < totalPages && (
-          <Link href={`/blog/page/${currentPage + 1}`} className="px-3 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors">
-            &gt;
-          </Link>
-        )}
-      </div>
+      <nav className="mt-12 flex justify-center" aria-label="Pagination">
+        <ul className="inline-flex items-center -space-x-px">
+          {currentPage > 1 && (
+            <li>
+              <Link href={`/blog/page/${currentPage - 1}`} className="block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700">
+                <span className="sr-only">Previous</span>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+              </Link>
+            </li>
+          )}
+          {pageNumbers.map((number, index) => (
+            <li key={index}>
+              {number === '...' ? (
+                <span className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300">...</span>
+              ) : (
+                <Link
+                  href={`/blog/page/${number}`}
+                  className={`px-3 py-2 leading-tight border ${
+                    currentPage === number
+                      ? 'text-blue-600 border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700'
+                      : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700'
+                  }`}
+                >
+                  {number}
+                </Link>
+              )}
+            </li>
+          ))}
+          {currentPage < totalPages && (
+            <li>
+              <Link href={`/blog/page/${currentPage + 1}`} className="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700">
+                <span className="sr-only">Next</span>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
+              </Link>
+            </li>
+          )}
+        </ul>
+      </nav>
     </div>
   );
 }
