@@ -1,4 +1,5 @@
 import React from 'react';
+import Timeline from '../components/Timeline';
 
 const AboutPage: React.FC = () => {
   return (
@@ -13,9 +14,11 @@ const AboutPage: React.FC = () => {
       <p className="mb-4">
         Today, I'm focused on building AI-powered tools that can help entrepreneurs and creators boost their productivity and achieve their goals.
       </p>
-      <p>
+      <p className="mb-8">
         Through this website, I aim to share my experiences, insights, and the lessons I've learned along the way. Join me on this exciting journey of AI-powered entrepreneurship!
       </p>
+      
+      <Timeline />
     </div>
   );
 };

@@ -15,7 +15,10 @@ const iconComponents = {
 };
 
 const Timeline: React.FC = () => {
-  const timelineItems: TimelineItem[] = timelineData;
+  const timelineItems: TimelineItem[] = timelineData.map(item => ({
+    ...item,
+    icon: item.icon as 'Rocket' | 'Wrench' | 'Building2'
+  }));
 
   return (
     <section className="py-12 w-full max-w-7xl mx-auto px-4">
