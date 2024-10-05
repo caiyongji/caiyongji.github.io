@@ -3,8 +3,11 @@ import { getBlogPosts } from '../../lib/getBlogPosts';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import CodeBlock from '../../components/CodeBlock';
-import TableOfContents from '../../components/TableOfContents';
+import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
+
+// 动态导入 TableOfContents 组件，禁用 SSR
+const TableOfContents = dynamic(() => import('../../components/TableOfContents'), { ssr: false });
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const posts = getBlogPosts();
