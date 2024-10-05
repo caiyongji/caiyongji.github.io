@@ -17,7 +17,7 @@ export default function Home() {
       </section>
       <section className="w-full">
         <ProjectShowcase />
-        <Roadmap />
+        {/* <Roadmap /> */}
         <Timeline />
         {/* Other components */}
       </section>

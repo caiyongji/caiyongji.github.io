@@ -8,9 +8,9 @@ import { XIcon, LinkedInIcon, MediumIcon, YouTubeIcon } from './SocialIcons'
 
 const keywords = [
   { text: 'AI', color: '#007bff' },
-  { text: 'Self Improvement', color: '#28a745' },
+  { text: 'Programming', color: '#28a745' },
   { text: 'Startup', color: '#fd7e14' },
-  { text: 'Personal Growth', color: '#ffc107' }
+  { text: 'Self Improvement', color: '#ffc107' }
 ]
 
 const DynamicTitle: React.FC = () => {
