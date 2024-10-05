@@ -4,6 +4,17 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import CodeBlock from '../../components/CodeBlock';
 import TableOfContents from '../../components/TableOfContents';
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const posts = getBlogPosts();
+  const post = posts.find((p) => p.slug === params.slug);
+
+  return {
+    title: post?.title,
+    description: post?.description,
+  };
+}
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
