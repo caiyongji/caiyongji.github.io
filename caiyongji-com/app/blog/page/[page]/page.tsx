@@ -48,7 +48,7 @@ export default function BlogPage({ params }: { params: { page: string } }) {
                   <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
                     {post.title}
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-300 mt-2 line-clamp-2">{post.description}</p>
+                  <p className="text-gray-600 dark:text-gray-500 mt-2 line-clamp-2">{post.description}</p>
                   <p className="text-sm text-gray-400 dark:text-gray-500 mt-2">{post.date}</p>
                 </Link>
               </li>

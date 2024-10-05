@@ -1,16 +1,17 @@
 [
+{
+"date": "2024-10-05",
+"description": "Developed first AI prototype.",
+"icon": "Wrench"
+},
   {
-    "date": "2022-01-02",
+    "date": "2024-10-01",
     "description": "Started exploring AI tools.",
     "icon": "Rocket"
   },
+
   {
-    "date": "2022-06-15",
-    "description": "Developed first AI prototype.",
-    "icon": "Wrench"
-  },
-  {
-    "date": "2023-03-20",
+    "date": "2024-09-17",
     "description": "Founded the startup.",
     "icon": "Building2"
   }

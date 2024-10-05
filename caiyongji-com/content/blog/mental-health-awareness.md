@@ -1,7 +1,7 @@
 ---
 title: "Breaking the Stigma: Mental Health in the Modern World"
 date: "2024-03-22"
-description: "Addressing the growing importance of mental health awareness and support"
+description: "Addressing the growing importance of mental health awareness and support Addressing the growing importance of mental health awareness and supportAddressing the growing importance of mental health awareness and support"
 ---
 
 # Breaking the Stigma: Mental Health in the Modern World
