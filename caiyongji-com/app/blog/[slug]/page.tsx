@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getBlogPosts } from '../../lib/getBlogPosts';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -13,7 +14,10 @@ export async function generateStaticParams() {
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
   const posts = getBlogPosts();
-  const post = posts.find((p) => p.slug === params.slug);
+  const currentIndex = posts.findIndex((p) => p.slug === params.slug);
+  const post = posts[currentIndex];
+  const prevPost = posts[currentIndex + 1] || null;
+  const nextPost = posts[currentIndex - 1] || null;
 
   if (!post) {
     return <div>Post not found</div>;
@@ -21,6 +25,21 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      {/* Breadcrumb navigation */}
+      <nav className="text-sm mb-4">
+        <ol className="list-none p-0 inline-flex">
+          <li className="flex items-center">
+            <Link href="/" className="text-blue-500 hover:text-blue-600">Home</Link>
+            <span className="mx-2">/</span>
+          </li>
+          <li className="flex items-center">
+            <Link href="/blog" className="text-blue-500 hover:text-blue-600">Blog</Link>
+            <span className="mx-2">/</span>
+          </li>
+          <li className="text-gray-500">{post.title}</li>
+        </ol>
+      </nav>
+
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-3/4 pr-0 md:pr-8">
           <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
@@ -49,6 +68,26 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 h4: ({ node, ...props }) => <h4 className="text-lg font-medium mt-3 mb-2" {...props} />,
               }}
             />
+          </div>
+
+          {/* Previous and Next post navigation */}
+          <div className="mt-8 flex justify-between">
+            {prevPost && (
+              <div>
+                <span className="block text-sm text-gray-500 uppercase">Previous</span>
+                <Link href={`/blog/${prevPost.slug}`} className="block font-semibold text-blue-500 hover:text-blue-600">
+                  {prevPost.title}
+                </Link>
+              </div>
+            )}
+            {nextPost && (
+              <div className={`${!prevPost ? 'ml-auto' : ''} text-right`}>
+                <span className="block text-sm text-gray-500 uppercase">Next</span>
+                <Link href={`/blog/${nextPost.slug}`} className="block font-semibold text-blue-500 hover:text-blue-600">
+                  {nextPost.title}
+                </Link>
+              </div>
+            )}
           </div>
         </div>
         <div className="w-full md:w-1/4 mt-8 md:mt-0">
