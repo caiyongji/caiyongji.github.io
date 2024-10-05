@@ -1,45 +1,75 @@
-caiyongji-com/
-├── app/
+cai@192 caiyongji-com % tree -I node_modules
+.
+├── README.md
+├── _documents
+│   ├── markdown.md
+│   └── unifiedGradient.md
+├── _instructions
+│   ├── _instruction.md
+│   ├── _prd.md
+│   ├── fileStructure.md
+│   └── footer_design.md
+├── app
+│   ├── about
+│   │   └── page.tsx
+│   ├── blog
+│   │   ├── [slug]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── components
+│   │   ├── CodeBlock.tsx
+│   │   ├── DynamicTitle.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Navigation.tsx
+│   │   ├── ProjectCard.tsx
+│   │   ├── ProjectShowcase.tsx
+│   │   ├── Roadmap.tsx
+│   │   ├── SocialIcons.tsx
+│   │   ├── TableOfContents.tsx
+│   │   ├── ThemeProvider.tsx
+│   │   ├── Timeline.tsx
+│   │   ├── theme-provider.tsx
+│   │   └── ui
+│   │       └── avatar.tsx
 │   ├── favicon.ico
-│   ├── fonts/
+│   ├── fonts
 │   │   ├── GeistMonoVF.woff
 │   │   └── GeistVF.woff
 │   ├── globals.css
-│   ├── layout.tsx                // Main layout component
-│   ├── page.tsx                  // Home page
-│   ├── about/
-│   │   └── page.tsx              // About Me page
-│   ├── blog/
-│   │   ├── [slug]/
-│   │   │   └── page.tsx          // Dynamic blog post pages
-│   ├── product/
-│   │   └── page.tsx              // Product page
-│   ├── api/
-│   │   └── subscribe.ts          // API route for subscriptions
-├── components/                   // Reusable components
-│   ├── Navbar.tsx                // Navigation bar
-│   ├── Footer.tsx                // Footer section
-│   ├── DynamicTitle.tsx          // Home page dynamic title
-│   ├── ProjectCard.tsx           // Component for project showcase
-│   ├── RoadmapItem.tsx           // Component for roadmap items
-│   ├── TimelineItem.tsx          // Component for timeline entries
-├── content/                      // Content files
-│   ├── roadmap.json              // Roadmap data
-│   ├── timeline.json             // Timeline data
-│   └── blog/                     // Blog posts in .mdx format
-│       ├── post1.mdx
-│       └── post2.mdx
-├── lib/
-│   └── utils.ts                  // Utility functions
-├── public/
-│   ├── images/
-│   │   ├── avatar.jpg            // Personal avatar image
-│   │   ├── project1.jpg          // Project images
-│   │   └── icons/                // Icon images if needed
+│   ├── layout.tsx
+│   ├── lib
+│   │   ├── getBlogPosts.ts
+│   │   ├── mdx.ts
+│   │   └── utils.ts
+│   ├── page.tsx
+│   └── types
+│       ├── post.ts
+│       └── searchParams.ts
+├── components.json
+├── content
+│   ├── blog
+│   │   ├── ai-tool-learning.mdx
+│   │   ├── cai-test.md
+│   │   ├── how-to-use-ai-tools.mdx
+│   │   └── test.md
+│   ├── projects.json
+│   ├── roadmap.json
+│   └── timeline.json
+├── lib
+│   └── utils.ts
 ├── next-env.d.ts
 ├── next.config.mjs
-├── package.json
 ├── package-lock.json
+├── package.json
 ├── postcss.config.mjs
+├── public
+│   ├── avatars
+│   │   ├── IMG_9492.JPG
+│   │   └── avatar.png
+│   └── images
+├── tailwind.config.js
 ├── tailwind.config.ts
 └── tsconfig.json
+
+18 directories, 53 files
+cai@192 caiyongji-com % 
