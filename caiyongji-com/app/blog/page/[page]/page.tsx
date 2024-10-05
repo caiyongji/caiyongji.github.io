@@ -53,7 +53,7 @@ export default function BlogPage({ params }: { params: { page: string } }) {
           </li>
         ))}
       </ul>
-      <div className="mt-8 flex justify-center space-x-2">
+      <div className="mt-8 flex justify-left space-x-2">
         {currentPage > 1 && (
           <Link href={`/blog/page/${currentPage - 1}`} className="px-3 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors">
             &lt;
@@ -68,7 +68,7 @@ export default function BlogPage({ params }: { params: { page: string } }) {
               href={`/blog/page/${number}`}
               className={`px-3 py-2 rounded transition-colors ${
                 currentPage === number
-                  ? 'bg-gray-600 text-white'
+                  ? 'bg-blue-600 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
