@@ -34,7 +34,7 @@ const Timeline: React.FC = () => {
                   <span className="text-lg font-semibold mr-2">{item.date}</span>
                   <IconComponent className="w-6 h-6 text-blue-500" />
                 </span>
-                <p className="text-gray-700">{item.description}</p>
+                <p className="text-gray-400">{item.description}</p>
               </div>
             </div>
           );
