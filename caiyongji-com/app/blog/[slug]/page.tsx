@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const post = posts.find((p) => p.slug === params.slug);
 
   return {
-    title: post?.title,
+    title: 'Cai Yongji - ' + post?.title,
     description: post?.description,
   };
 }
