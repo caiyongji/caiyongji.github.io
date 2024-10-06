@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { Sun, Moon, Menu, X } from 'lucide-react';
+import SearchBar from './SearchBar';
 
 const Navigation = () => {
   const [mounted, setMounted] = useState(false);
@@ -39,20 +40,19 @@ const Navigation = () => {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-        <ul className={`md:flex md:space-x-4 md:items-center ${isMenuOpen ? 'flex' : 'hidden'} flex-col md:flex-row absolute md:static top-16 right-0 bg-white dark:bg-[rgb(20,20,20)] md:bg-transparent p-4 md:p-0 shadow-lg md:shadow-none`}>
-          <li className="w-full md:w-auto"><Link href="/" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300 text-left">Home</Link></li>
-          <li className="w-full md:w-auto"><Link href="/blog" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300 text-left">Blog</Link></li>
-          <li className="w-full md:w-auto"><Link href="/about" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300 text-left">About</Link></li>
-          <li className="w-full md:w-auto flex justify-end md:justify-start">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors mt-2 md:mt-0"
-              aria-label="Toggle theme"
-            >
-              {currentTheme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-          </li>
-        </ul>
+        <div className={`md:flex md:items-center md:space-x-4 ${isMenuOpen ? 'flex' : 'hidden'} flex-col md:flex-row absolute md:static top-16 right-0 left-0 bg-white dark:bg-[rgb(20,20,20)] md:bg-transparent p-4 md:p-0 shadow-lg md:shadow-none w-full md:w-auto`}>
+          <SearchBar />
+          <Link href="/" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300">Home</Link>
+          <Link href="/blog" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300">Blog</Link>
+          <Link href="/about" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300">About</Link>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors mt-2 md:mt-0"
+            aria-label="Toggle theme"
+          >
+            {currentTheme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+        </div>
       </div>
     </nav>
   );
