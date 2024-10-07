@@ -63,28 +63,28 @@ export default function DiaryPage() {
 
   return (
     <div className="max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-8 text-center">My Startup Journal</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center dark:text-white">My Startup Journal</h1>
       <div className="flex justify-between items-center mb-4">
-        <button onClick={() => changeYear(-1)} className="p-2" disabled={year <= 1}>
+        <button onClick={() => changeYear(-1)} className="p-2 text-gray-600 dark:text-gray-400" disabled={year <= 1}>
           <ChevronLeft />
         </button>
-        <span className="text-xl font-semibold">{year}</span>
-        <button onClick={() => changeYear(1)} className="p-2" disabled={year >= currentYear}>
+        <span className="text-xl font-semibold dark:text-white">{year}</span>
+        <button onClick={() => changeYear(1)} className="p-2 text-gray-600 dark:text-gray-400" disabled={year >= currentYear}>
           <ChevronRight />
         </button>
       </div>
 
-      <h2 className="text-2xl font-semibold mb-4">Monthly Overview</h2>
+      <h2 className="text-2xl font-semibold mb-4 dark:text-white">Monthly Overview</h2>
       <MonthlyOverview overview={monthlyOverview} />
 
-      <h2 className="text-2xl font-semibold my-4">All Entries</h2>
+      <h2 className="text-2xl font-semibold my-4 dark:text-white">All Entries</h2>
       <div className="space-y-8">
         {entries.map((entry) => (
           <TimelineEntry key={entry.id} entry={entry} />
         ))}
       </div>
       {hasMore && <div ref={ref} className="h-10" />}
-      {isLoading && <div className="text-center">Loading...</div>}
+      {isLoading && <div className="text-center dark:text-white">Loading...</div>}
     </div>
   )
 }

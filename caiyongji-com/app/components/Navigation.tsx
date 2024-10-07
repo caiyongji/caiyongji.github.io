@@ -44,6 +44,7 @@ const Navigation = () => {
           <SearchBar />
           <Link href="/" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300">Home</Link>
           <Link href="/blog" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300">Blog</Link>
+          <Link href="/diary" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300">Diary</Link>
           <Link href="/about" className="block py-2 md:py-0 hover:text-gray-600 dark:hover:text-gray-300">About</Link>
           <button
             onClick={toggleTheme}

@@ -121,12 +121,15 @@ html {
 .markdown-content pre {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  white-space: pre;
-  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .markdown-content code {
   font-size: 0.9em;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .markdown-content img {
@@ -141,4 +144,22 @@ html {
     margin-right: -1rem;
     border-radius: 0;
   }
+}
+
+/* 自定义滚动条样式 */
+.code-block-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-block-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.code-block-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.code-block-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
