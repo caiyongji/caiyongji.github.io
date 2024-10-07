@@ -18,7 +18,7 @@ export default function DiaryPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [ref, inView] = useInView()
 
-  const ITEMS_PER_PAGE = 5; // 新增这行，定义每页条目数
+  const ITEMS_PER_PAGE = 5;
 
   useEffect(() => {
     setPage(1)
@@ -38,20 +38,29 @@ export default function DiaryPage() {
     if (isLoading) return
     setIsLoading(true)
     const currentPage = reset ? 1 : page
-    const response = await fetchJournalEntries(year, currentPage, ITEMS_PER_PAGE) // 修改这行
-    setIsLoading(false)
-    if (response.entries.length === 0) {
-      setHasMore(false)
-    } else {
-      setEntries(prev => reset ? response.entries : [...prev, ...response.entries])
-      setPage(prev => prev + 1)
-      setHasMore(currentPage < response.totalPages)
+    try {
+      const response = await fetchJournalEntries(year, currentPage, ITEMS_PER_PAGE)
+      if (response.entries.length === 0) {
+        setHasMore(false)
+      } else {
+        setEntries(prev => reset ? response.entries : [...prev, ...response.entries])
+        setPage(prev => prev + 1)
+        setHasMore(currentPage < response.totalPages)
+      }
+    } catch (error) {
+      console.error('Error loading entries:', error)
+    } finally {
+      setIsLoading(false)
     }
   }
 
   const loadMonthlyOverview = async () => {
-    const overview = await fetchMonthlyOverview(year)
-    setMonthlyOverview(overview)
+    try {
+      const overview = await fetchMonthlyOverview(year)
+      setMonthlyOverview(overview)
+    } catch (error) {
+      console.error('Error loading monthly overview:', error)
+    }
   }
 
   const changeYear = (increment: number) => {
@@ -62,29 +71,45 @@ export default function DiaryPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-8 text-center dark:text-white">My Startup Journal</h1>
-      <div className="flex justify-between items-center mb-4">
-        <button onClick={() => changeYear(-1)} className="p-2 text-gray-600 dark:text-gray-400" disabled={year <= 1}>
-          <ChevronLeft />
-        </button>
-        <span className="text-xl font-semibold dark:text-white">{year}</span>
-        <button onClick={() => changeYear(1)} className="p-2 text-gray-600 dark:text-gray-400" disabled={year >= currentYear}>
-          <ChevronRight />
-        </button>
-      </div>
+      <div className="max-w-4xl mx-auto p-4">
+        <h1 className="text-3xl font-bold mb-8 text-center dark:text-white">My Startup Journal</h1>
 
-      <h2 className="text-2xl font-semibold mb-4 dark:text-white">Monthly Overview</h2>
-      <MonthlyOverview overview={monthlyOverview} />
+        <div className="flex justify-between items-center mb-4">
+          <button onClick={() => changeYear(-1)} className="btn btn-primary">
+            <ChevronLeft/>
+          </button>
+          <h2 className="text-2xl font-semibold">{year}</h2>
+          <button onClick={() => changeYear(1)} className="btn btn-primary" disabled={year === currentYear}>
+            <ChevronRight/>
+          </button>
+        </div>
+        <MonthlyOverview overview={monthlyOverview}/>
+        <div className="space-y-8">
+          {entries.map((entry, index) => {
+            const currentMonth = new Date(entry.date).getMonth()
+            const prevMonth = index > 0 ? new Date(entries[index - 1].date).getMonth() : null
+            const showMonthSeparator = index === 0 || currentMonth !== prevMonth
 
-      <h2 className="text-2xl font-semibold my-4 dark:text-white">All Entries</h2>
-      <div className="space-y-8">
-        {entries.map((entry) => (
-          <TimelineEntry key={entry.id} entry={entry} />
-        ))}
+            return (
+                <TimelineEntry
+                    key={entry.id}
+                    entry={entry}
+                    showMonthSeparator={showMonthSeparator}
+                />
+            )
+          })}
+        </div>
+        {hasMore && (
+            <div ref={ref} className="flex justify-center mt-8">
+              {isLoading ? (
+                  <p>Loading more entries...</p>
+              ) : (
+                  <button onClick={() => loadMore()} className="btn btn-primary">
+                    Load More
+                  </button>
+              )}
+            </div>
+        )}
       </div>
-      {hasMore && <div ref={ref} className="h-10" />}
-      {isLoading && <div className="text-center dark:text-white">Loading...</div>}
-    </div>
   )
 }
