@@ -71,45 +71,45 @@ export default function DiaryPage() {
   }
 
   return (
-      <div className="max-w-4xl mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-8 text-center dark:text-white">My Startup Journal</h1>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-8 text-center dark:text-white">My Startup Journal</h1>
 
-        <div className="flex justify-between items-center mb-4">
-          <button onClick={() => changeYear(-1)} className="btn btn-primary">
-            <ChevronLeft/>
-          </button>
-          <h2 className="text-2xl font-semibold">{year}</h2>
-          <button onClick={() => changeYear(1)} className="btn btn-primary" disabled={year === currentYear}>
-            <ChevronRight/>
-          </button>
-        </div>
-        <MonthlyOverview overview={monthlyOverview}/>
-        <div className="space-y-8">
-          {entries.map((entry, index) => {
-            const currentMonth = new Date(entry.date).getMonth()
-            const prevMonth = index > 0 ? new Date(entries[index - 1].date).getMonth() : null
-            const showMonthSeparator = index === 0 || currentMonth !== prevMonth
-
-            return (
-                <TimelineEntry
-                    key={entry.id}
-                    entry={entry}
-                    showMonthSeparator={showMonthSeparator}
-                />
-            )
-          })}
-        </div>
-        {hasMore && (
-            <div ref={ref} className="flex justify-center mt-8">
-              {isLoading ? (
-                  <p>Loading more entries...</p>
-              ) : (
-                  <button onClick={() => loadMore()} className="btn btn-primary">
-                    Load More
-                  </button>
-              )}
-            </div>
-        )}
+      <div className="flex justify-between items-center mb-4">
+        <button onClick={() => changeYear(-1)} className="btn btn-primary">
+          <ChevronLeft />
+        </button>
+        <h2 className="text-2xl font-semibold">{year}</h2>
+        <button onClick={() => changeYear(1)} className="btn btn-primary" disabled={year === currentYear}>
+          <ChevronRight />
+        </button>
       </div>
+      <MonthlyOverview overview={monthlyOverview} />
+      <div className="space-y-8">
+        {entries.map((entry, index) => {
+          const currentMonth = new Date(entry.date).getMonth()
+          const prevMonth = index > 0 ? new Date(entries[index - 1].date).getMonth() : null
+          const showMonthSeparator = index === 0 || currentMonth !== prevMonth
+
+          return (
+            <TimelineEntry
+              key={entry.id}
+              entry={entry}
+              showMonthSeparator={showMonthSeparator}
+            />
+          )
+        })}
+      </div>
+      {hasMore && (
+        <div ref={ref} className="flex justify-center mt-8">
+          {isLoading ? (
+            <p>Loading more entries...</p>
+          ) : (
+            <button onClick={() => loadMore()} className="btn btn-primary">
+              Load More
+            </button>
+          )}
+        </div>
+      )}
+    </div>
   )
 }
