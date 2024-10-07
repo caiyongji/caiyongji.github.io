@@ -40,7 +40,7 @@ export default function BlogPage({ params }: { params: { page: string } }) {
 
   return (
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        <h1 className="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-gray-100">Blog Posts</h1>
+        {/* <h1 className="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-gray-100">Blog Posts</h1> */}
         <ul className="space-y-8">
           {paginatedPosts.map((post: BlogPost) => (
               <li key={post.slug} className="border-b border-gray-200 dark:border-gray-700 pb-6 last:border-b-0">
