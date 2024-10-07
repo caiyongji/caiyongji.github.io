@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const year = parseInt(searchParams.get('year') || new Date().getFullYear().toString())
   const page = parseInt(searchParams.get('page') || '1')
-  const limit = parseInt(searchParams.get('limit') || '10')
+  const limit = parseInt(searchParams.get('limit') || '5') // 修改默认值为5
 
   const currentYear = new Date().getFullYear()
   if (year > currentYear) {

@@ -18,6 +18,8 @@ export default function DiaryPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [ref, inView] = useInView()
 
+  const ITEMS_PER_PAGE = 5; // 新增这行，定义每页条目数
+
   useEffect(() => {
     setPage(1)
     setEntries([])
@@ -36,7 +38,7 @@ export default function DiaryPage() {
     if (isLoading) return
     setIsLoading(true)
     const currentPage = reset ? 1 : page
-    const response = await fetchJournalEntries(year, currentPage, 10)
+    const response = await fetchJournalEntries(year, currentPage, ITEMS_PER_PAGE) // 修改这行
     setIsLoading(false)
     if (response.entries.length === 0) {
       setHasMore(false)

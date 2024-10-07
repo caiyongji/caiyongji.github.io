@@ -54,3 +54,91 @@ html {
 .social-icon {
   transition: color 0.3s ease;
 }
+
+.markdown-content h1 {
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-content h2 {
+  font-size: 1.3em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-content p {
+  margin-bottom: 0.5em;
+}
+
+.markdown-content ul, .markdown-content ol {
+  margin-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25em;
+}
+
+/* 在文件末尾添加以下样式 */
+.dark pre {
+  background-color: #1e1e1e !important;
+}
+
+.dark code {
+  color: #d4d4d4 !important;
+}
+
+/* 在文件末尾添加以下样式 */
+.markdown-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-content code {
+  font-size: 0.9em;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 在文件末尾添加或更新以下样式 */
+.markdown-content {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.code-block-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.markdown-content pre {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.markdown-content code {
+  font-size: 0.9em;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 确保代码块在小屏幕上也能正常显示 */
+@media (max-width: 640px) {
+  .code-block-wrapper {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+  }
+}
