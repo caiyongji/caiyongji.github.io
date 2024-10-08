@@ -49,7 +49,7 @@ export default function TimelineEntry({ entry, showMonthSeparator = false }: Tim
         <div className="flex w-full my-4">
           <div className="flex-shrink-0 w-12 mr-4"></div>
           <div className="flex-grow">
-            <div className="text-lg font-semibold text-gray-700 dark:text-gray-300">
+            <div className="text-lg font-semibold text-blue-500 dark:text-blue-400">
               {formatMonth(entry.date)}
             </div>
           </div>
@@ -57,8 +57,8 @@ export default function TimelineEntry({ entry, showMonthSeparator = false }: Tim
       )}
       <div className="flex w-full">
         <div className="flex-shrink-0 w-12 flex flex-col items-center mr-4">
-          <div className="w-3 h-3 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
-          <div className="w-0.5 flex-grow bg-gray-300 dark:bg-gray-700"></div>
+          <div className="w-3 h-3 bg-blue-500 dark:bg-blue-300 rounded-full"></div>
+          <div className="w-0.5 flex-grow bg-blue-300 dark:bg-blue-400"></div>
         </div>
         <div className="flex-grow max-w-full overflow-hidden">
           <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
