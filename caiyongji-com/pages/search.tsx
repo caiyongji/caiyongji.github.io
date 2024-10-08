@@ -1,21 +1,21 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
-import { getBlogPosts } from '../lib/getBlogPosts';
+import Layout from '../app/layout';
+import { BlogPost, getBlogPosts } from '../lib/getBlogPosts';
 import Link from 'next/link';
 
 const SearchPage = () => {
   const router = useRouter();
   const { q } = router.query;
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState<BlogPost[]>([]);
 
   useEffect(() => {
     const fetchSearchResults = async () => {
       if (q) {
         const posts = await getBlogPosts();
         const filteredPosts = posts.filter(post => 
-          post.title.toLowerCase().includes(q.toLowerCase()) ||
-          post.content.toLowerCase().includes(q.toLowerCase())
+          post.title.toLowerCase().includes(q.toString().toLowerCase()) ||
+          post.content.toLowerCase().includes(q.toString().toLowerCase())
         );
         setSearchResults(filteredPosts);
       }
