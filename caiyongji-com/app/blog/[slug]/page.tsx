@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm';
 import CodeBlock from '../../components/CodeBlock';
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
+import { ComponentProps } from 'react';
 
 // 动态导入 TableOfContents 组件，禁用 SSR
 const TableOfContents = dynamic(() => import('../../components/TableOfContents'), { ssr: false });
@@ -70,10 +71,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </header>
           <div className="prose prose-lg lg:prose-xl max-w-none dark:prose-invert">
             <ReactMarkdown
-              children={post.content}
               remarkPlugins={[remarkGfm]}
               components={{
-                code({ node, inline, className, children, ...props }) {
+                code({ inline, className, children, ...props }: ComponentProps<'code'> & { inline?: boolean }) {
                   const match = /language-(\w+)/.exec(className || '');
                   return !inline && match ? (
                     <CodeBlock 
@@ -86,18 +86,20 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                     </code>
                   );
                 },
-                h1: ({ node, ...props }) => <h1 id={props.children?.toString().toLowerCase().replace(/\s+/g, '-')} className="text-3xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100" {...props} />,
-                h2: ({ node, ...props }) => <h2 id={props.children?.toString().toLowerCase().replace(/\s+/g, '-')} className="text-2xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-100" {...props} />,
-                h3: ({ node, ...props }) => <h3 className="text-xl font-medium mt-4 mb-2 text-gray-800 dark:text-gray-100" {...props} />,
-                h4: ({ node, ...props }) => <h4 className="text-lg font-medium mt-3 mb-2 text-gray-800 dark:text-gray-100" {...props} />,
-                p: ({ node, ...props }) => <p className="text-gray-700 dark:text-gray-300" {...props} />,
-                a: ({ node, ...props }) => <a className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-200" {...props} />,
-                ul: ({ node, ...props }) => <ul className="list-disc pl-5 my-4" {...props} />,
-                ol: ({ node, ...props }) => <ol className="list-decimal pl-5 my-4" {...props} />,
-                li: ({ node, ...props }) => <li className="mb-2" {...props} />,
-                blockquote: ({ node, ...props }) => <blockquote className="border-l-4 border-gray-300 dark:border-gray-700 pl-4 italic my-4 text-gray-600 dark:text-gray-400" {...props} />,
+                h1: ({ children, ...props }) => <h1 id={children?.toString().toLowerCase().replace(/\s+/g, '-')} className="text-3xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100" {...props} />,
+                h2: ({ children, ...props }) => <h2 id={children?.toString().toLowerCase().replace(/\s+/g, '-')} className="text-2xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-100" {...props} />,
+                h3: ({ ...props }) => <h3 className="text-xl font-medium mt-4 mb-2 text-gray-800 dark:text-gray-100" {...props} />,
+                h4: ({ ...props }) => <h4 className="text-lg font-medium mt-3 mb-2 text-gray-800 dark:text-gray-100" {...props} />,
+                p: ({ ...props }) => <p className="text-gray-700 dark:text-gray-300" {...props} />,
+                a: ({ ...props }) => <a className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-200" {...props} />,
+                ul: ({ ...props }) => <ul className="list-disc pl-5 my-4" {...props} />,
+                ol: ({ ...props }) => <ol className="list-decimal pl-5 my-4" {...props} />,
+                li: ({ ...props }) => <li className="mb-2" {...props} />,
+                blockquote: ({ ...props }) => <blockquote className="border-l-4 border-gray-300 dark:border-gray-700 pl-4 italic my-4 text-gray-600 dark:text-gray-400" {...props} />,
               }}
-            />
+            >
+              {post.content}
+            </ReactMarkdown>
           </div>
 
           {/* Previous and Next post navigation */}
