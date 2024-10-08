@@ -1,16 +1,13 @@
 import './globals.css'
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from "@/components/theme-provider"
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
+import { metadata } from './metadata'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: "Cai Yongji - All about AI, Self Improvement, Startup, and Personal Growth.",
-  description: "Hi, I'm Cai, an indie developer exploring AI-powered entrepreneurship. I'm taking a Build in Public approach, focusing on AI, Self Improvement, Startup, and Personal Growth.",
-};
+export { metadata }
 
 export default function RootLayout({
   children,
