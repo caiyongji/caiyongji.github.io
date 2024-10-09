@@ -2,6 +2,7 @@
 title: "Beyond Cryptocurrency: Innovative Blockchain Applications"
 date: "2024-03-20"
 description: "Exploring the diverse uses of blockchain technology across industries"
+image: "/images/og-image-ai.png"
 ---
 
 # Beyond Cryptocurrency: Innovative Blockchain Applications
