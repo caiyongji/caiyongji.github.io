@@ -26,7 +26,7 @@ const SearchPage = () => {
 
   return (
     <Layout>
-      <h1 className="text-3xl font-bold mb-4">Search Results for "{q}"</h1>
+      <h1 className="text-3xl font-bold mb-4">Search Results for &ldquo;{q}&rdquo;</h1>
       {searchResults.length > 0 ? (
         <ul>
           {searchResults.map(post => (
