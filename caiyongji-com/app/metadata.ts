@@ -6,13 +6,13 @@ export const metadata = {
     openGraph: {
       title: "Cai Yongji - All about AI, Self Improvement, Startup, and Personal Growth.",
       description: "Hi, I'm Cai, an indie developer exploring AI-powered entrepreneurship. I'm taking a Build in Public approach, focusing on AI, Self Improvement, Startup, and Personal Growth.",    
-      url: 'https://www.caiyongji.com',
+      url: 'https://caiyongji-github-io.vercel.app/',
       siteName: 'Cai Yongji',
       images: [
         {
-          url: 'https://www.caiyongji.com/images/og-image.png',
-          width: 1200,
-          height: 792,
+          url: 'https://caiyongji-github-io.vercel.app/images/og-image-ai.png',
+          width: 1298,
+          height: 845,
           alt: 'Og Image Alt',
         },
       ],
@@ -20,9 +20,9 @@ export const metadata = {
       type: 'website',
     },
     twitter: {
-      card: 'summary_large_image',
-      title: 'Your Default Twitter Title',
-      description: 'Default Twitter description',
-      images: ['https://yourwebsite.com/twitter-image.jpg'],
+      card: 'Cai Yongji',
+      title: "Cai Yongji - All about AI, Self Improvement, Startup, and Personal Growth.",
+      description: "Hi, I'm Cai, an indie developer exploring AI-powered entrepreneurship. I'm taking a Build in Public approach, focusing on AI, Self Improvement, Startup, and Personal Growth.",    
+      images: ['https://caiyongji-github-io.vercel.app/images/og-image-ai.png'],
     },
   };
