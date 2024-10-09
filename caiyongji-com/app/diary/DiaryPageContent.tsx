@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
 import MonthlyOverview from './MonthlyOverview'
@@ -20,21 +20,7 @@ export default function DiaryPage() {
 
   const ITEMS_PER_PAGE = 5;
 
-  useEffect(() => {
-    setPage(1)
-    setEntries([])
-    setHasMore(true)
-    loadMore(true)
-    loadMonthlyOverview()
-  }, [year])
-
-  useEffect(() => {
-    if (inView && hasMore && !isLoading) {
-      loadMore()
-    }
-  }, [inView, hasMore, isLoading])
-
-  const loadMore = async (reset = false) => {
+  const loadMore = useCallback(async (reset = false) => {
     if (isLoading) return
     setIsLoading(true)
     const currentPage = reset ? 1 : page
@@ -52,16 +38,30 @@ export default function DiaryPage() {
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [isLoading, page, year])
 
-  const loadMonthlyOverview = async () => {
+  const loadMonthlyOverview = useCallback(async () => {
     try {
       const overview = await fetchMonthlyOverview(year)
       setMonthlyOverview(overview)
     } catch (error) {
       console.error('Error loading monthly overview:', error)
     }
-  }
+  }, [year])
+
+  useEffect(() => {
+    setPage(1)
+    setEntries([])
+    setHasMore(true)
+    loadMore(true)
+    loadMonthlyOverview()
+  }, [year, loadMore, loadMonthlyOverview])
+
+  useEffect(() => {
+    if (inView && hasMore && !isLoading) {
+      loadMore()
+    }
+  }, [inView, hasMore, isLoading, loadMore])
 
   const changeYear = (increment: number) => {
     const newYear = year + increment
@@ -72,7 +72,7 @@ export default function DiaryPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8 text-center dark:text-white">Cai's Start Up Journal</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center dark:text-white">Cai&apos;s Start Up Journal</h1>
 
       <div className="flex justify-between items-center mb-4">
         <button onClick={() => changeYear(-1)} className="btn btn-primary">
