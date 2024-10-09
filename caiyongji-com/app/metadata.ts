@@ -10,9 +10,9 @@ export const metadata = {
       siteName: 'Cai Yongji',
       images: [
         {
-          url: 'https://www.caiyongji.com/og-image.jpg',
-          width: 800,
-          height: 600,
+          url: 'https://www.caiyongji.com/images/og-image.png',
+          width: 1200,
+          height: 792,
           alt: 'Og Image Alt',
         },
       ],
