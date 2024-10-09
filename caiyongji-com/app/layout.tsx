@@ -3,11 +3,11 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from "@/components/theme-provider"
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
-// import { metadata } from './metadata'
+import { metadata } from './metadata'
 
 const inter = Inter({ subsets: ['latin'] })
 
-// export { metadata }
+export { metadata }
 
 export default function RootLayout({
   children,
