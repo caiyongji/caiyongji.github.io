@@ -21,7 +21,7 @@ export default function DiaryPage() {
   const ITEMS_PER_PAGE = 5;
 
   const loadMore = useCallback(async (reset = false) => {
-    if (isLoading) return
+    if (isLoading || (!hasMore && !reset)) return
     setIsLoading(true)
     const currentPage = reset ? 1 : page
     try {
@@ -30,15 +30,15 @@ export default function DiaryPage() {
         setHasMore(false)
       } else {
         setEntries(prev => reset ? response.entries : [...prev, ...response.entries])
-        setPage(prev => prev + 1)
-        setHasMore(currentPage < response.totalPages)
+        setPage(prev => reset ? 2 : prev + 1)
+        setHasMore(response.entries.length === ITEMS_PER_PAGE)
       }
     } catch (error) {
       console.error('Error loading entries:', error)
     } finally {
       setIsLoading(false)
     }
-  }, [isLoading, page, year])
+  }, [isLoading, page, year, hasMore])
 
   const loadMonthlyOverview = useCallback(async () => {
     try {
@@ -55,7 +55,7 @@ export default function DiaryPage() {
     setHasMore(true)
     loadMore(true)
     loadMonthlyOverview()
-  }, [year, loadMore, loadMonthlyOverview])
+  }, [year])
 
   useEffect(() => {
     if (inView && hasMore && !isLoading) {
