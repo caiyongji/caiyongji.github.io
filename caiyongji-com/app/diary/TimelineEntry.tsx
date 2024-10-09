@@ -75,7 +75,7 @@ export default function TimelineEntry({ entry, showMonthSeparator = false }: Tim
             <div className={`text-gray-700 dark:text-gray-300 overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-full' : 'max-h-24'}`}>
               <ReactMarkdown
                 components={{
-                  code({node, inline, className, children, ...props}) {
+                  code({node, inline, className, children, ...props}: any) {
                     const match = /language-(\w+)/.exec(className || '')
                     const code = String(children).replace(/\n$/, '')
                     return !inline && match ? (
