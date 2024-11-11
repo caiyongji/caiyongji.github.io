@@ -5,9 +5,38 @@ description: "cai yongji test test  cacacacacacacaca"
 tags: ["Next.js", "React", "Web Development"]
 ---
 
+# emoji(not supported)
+:smiling_face_with_three_hearts:
+# task lists
+
+- [x] #739
+- [ ] https://github.com/octo-org/octo-repo/issues/740
+- [ ] Add delight to the experience when all tasks are complete :tada:
+
+# footnote
+Here is a simple footnote[^1].
+
+# alerts(not supported)
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
+A footnote can also have multiple lines[^2].
 # How to Use AI Tools to Boost Your Productivity
 
 AI tools are revolutionizing the way we work. In this tutorial, we'll explore some popular AI tools and how they can help you become more productive.
+
 
 ## 1. AI Writing Assistants
 
@@ -313,3 +342,8 @@ console.log("The sum is: " + result);
 
 ![Alt text](/images/test.jpeg)
 
+
+
+[^1]: My reference.
+[^2]: To add line breaks within a footnote, prefix new lines with 2 spaces.
+This is a second line.
